@@ -4,7 +4,7 @@ pipeline {
     agent any
 
     stages {
-        stag('Checkout - Git') {
+        stage('Checkout - Git') {
             checkout scm
         }
         stage('NPM') {
