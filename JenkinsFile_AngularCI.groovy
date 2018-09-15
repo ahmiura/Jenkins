@@ -5,9 +5,6 @@ pipeline {
 
     stages {
         stage('Checkout - Git') {
-<<<<<<< HEAD
-            checkout scm
-=======
             //checkout scm
             steps {
                 git branch: 'release-candidate-1.0.0',
@@ -16,7 +13,6 @@ pipeline {
 
                 sh "ls -lat"
             }
->>>>>>> f80ec81320ae2218bc4cfbcbe744bbb702643eef
         }
         
         stage('NPM') {
