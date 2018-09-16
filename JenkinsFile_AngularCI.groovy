@@ -18,10 +18,8 @@ pipeline {
         stage('NPM') {
             steps {
                 sh 'export PATH=$PATH:/usr/local/bin'
-                sh 'id'
                 sh 'pwd'
-                sh 'sudo node -v'
-                sh 'npm install '
+                sh 'npm install'
             }
         }
     }
