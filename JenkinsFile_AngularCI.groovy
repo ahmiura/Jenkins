@@ -5,8 +5,10 @@ pipeline {
     stages {
         stage('Checkout - Git') {
             //checkout scm
-            sh 'pwd'
             steps {
+                //sh 'pwd'
+                deleteDir()
+
                 git branch: 'release-candidate-1.0.0',
                     credentialsId: 'Id_credential_jenkins',
                     url: 'https://github.com/ahmiura/angular_alurapic.git'
