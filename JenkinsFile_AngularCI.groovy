@@ -28,7 +28,10 @@ pipeline {
 
         stage('Test') {
             steps {
-                sh 'ng test --progress=false --watch false'
+                nodejs(nodeJSInstallationName: 'Node 8.x', configId: '73c7e55b-1ed5-4573-88a1-da3f66448d73') {
+                    sh 'ng test --progress=false --watch false'
+                }
+                
             }
         }
     }
