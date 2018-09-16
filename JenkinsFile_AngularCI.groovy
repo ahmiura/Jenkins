@@ -1,12 +1,4 @@
 #!groovy
-
-node {
-    env.NODEJS_HOME = "${tool 'Node 8.x'}"
-    // on linux / mac
-    env.PATH="${env.NODEJS_HOME}/bin:${env.PATH}"
-    sh 'npm --version'
-}
-
 pipeline {
     agent any
 
@@ -25,6 +17,7 @@ pipeline {
         stage('NPM') {
             steps {
                 sh 'export PATH=$PATH:/usr/local/bin'
+                nodejs(nodeJSInstallationName: 'Node 8.x', configId: '<config-file-provider-id>')
                 sh 'pwd'
                 sh 'npm install'
             }
