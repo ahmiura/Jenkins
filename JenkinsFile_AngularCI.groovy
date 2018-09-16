@@ -20,7 +20,7 @@ pipeline {
                 sh 'export PATH=$PATH:/usr/local/bin'
                 sh 'id'
                 sh 'pwd'
-                sh 'npm -v'
+                sh 'node -v'
                 sh 'npm install '
             }
         }
