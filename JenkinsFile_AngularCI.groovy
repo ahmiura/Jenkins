@@ -5,7 +5,7 @@ pipeline {
     stages {
         stage('Checkout - Git') {
             //checkout scm
-            deleteDir()
+            sh 'pwd'
             steps {
                 git branch: 'release-candidate-1.0.0',
                     credentialsId: 'Id_credential_jenkins',
