@@ -7,7 +7,7 @@ pipeline {
             //checkout scm
             steps {
                 //sh 'pwd'
-                deleteDir()
+                //deleteDir()
 
                 git branch: 'release-candidate-1.0.0',
                     credentialsId: 'Id_credential_jenkins',
