@@ -1,7 +1,9 @@
 #!groovy
 pipeline {
     agent any
-
+    environment {
+        PATH = "/usr/local/bin:$PATH"
+    }
     stages {
         stage('Checkout - Git') {
             //checkout scm
@@ -28,7 +30,9 @@ pipeline {
 
         stage('Test') {
             steps {
-                sh '/usr/local/bin/ng test --progress=false --watch false'
+                echo 'PATH é; $PATH'
+                sh 'ng test --progress=false --watch false'
+                //sh '/usr/local/bin/ng test --progress=false --watch false'
             }
                 
         }
