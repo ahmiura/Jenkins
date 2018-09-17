@@ -28,7 +28,7 @@ pipeline {
 
         stage('Test') {
             withEnv(['NG_HOME=/usr/local/bin']) {
-                sh 'ng test --progress=false --watch false'
+                sh '$NG_HOME/ng test --progress=false --watch false'
             }
                 
         }
