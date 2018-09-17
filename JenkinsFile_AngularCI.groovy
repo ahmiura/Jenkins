@@ -6,19 +6,18 @@ pipeline {
     }
     stages {
         stage('Checkout - Git') {
-            steps {
-                checkout scm
-            }
-    
             /*steps {
+                checkout scm
+            }*/
+            steps {
                 deleteDir()
 
                 git branch: 'release-candidate-1.0.0',
                     credentialsId: 'Id_credential_jenkins',
                     url: 'https://github.com/ahmiura/angular_alurapic.git'
 
-                sh "ls -lat"
-            }*/
+                sh 'ls -lat'
+            }
         }
         
         stage('npm install') {
