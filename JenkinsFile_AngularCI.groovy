@@ -20,9 +20,9 @@ pipeline {
         
         stage('NPM') {
             steps {
-                //sh 'export PATH=$PATH:/usr/local/bin'
-                nodejs(nodeJSInstallationName: 'Node 8.x', configId: '73c7e55b-1ed5-4573-88a1-da3f66448d73') {
-                    sh 'npm install'
+                sh 'npm install'
+                //nodejs(nodeJSInstallationName: 'Node 8.x', configId: '73c7e55b-1ed5-4573-88a1-da3f66448d73') {
+                //    sh 'npm install'
                 }
                 
             }
@@ -30,9 +30,8 @@ pipeline {
 
         stage('Test') {
             steps {
-                echo 'PATH é; $PATH'
                 sh 'ng test --progress=false --watch false'
-                //sh '/usr/local/bin/ng test --progress=false --watch false'
+
             }
                 
         }
